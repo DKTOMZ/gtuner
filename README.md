@@ -16,7 +16,7 @@ Not the best designer but i try 😂. Maybe I can collab with a designer to impr
 
 # functionality ✨
 - Tuner : 12 different tunings
-- Metronome : temp between 30 and 240 BPM
+- Metronome : tempo between 30 and 240 BPM
 - Chord Library : Chords shapes of 9 different chord types
 
 # Future Features To add 📔
@@ -44,7 +44,7 @@ flutter_sequencer - https://pub.dev/packages/flutter_sequencer
 
 
 This project help me learn a lot more about flutter. If you find this helpful feel 
-free to contact me to collaborate on this or other projects
+free to contact me (deni.tomno@gmail.com) to collaborate on this or other projects
 
 
 
