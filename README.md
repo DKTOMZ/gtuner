@@ -36,15 +36,19 @@ This app makes use of some important packages that power the tuning, chord libra
 - flutter_sequencer package facilitates load the metronome audio sample, setting the tempo (with some calibration first) and play/loop the sample at the tempo speed upto a certain number of beats
 
 # Links to these helpful packages:
-pitchupdart 
+1. pitchupdart 
 - https://pub.dev/packages/pitchupdart
-pitch_detector_dart 
+
+2. pitch_detector_dart 
 - https://pub.dev/packages/pitch_detector_dart
-flutter_audio_capture 
+
+3. flutter_audio_capture 
 - https://pub.dev/packages/flutter_audio_capture
-carousel_slider 
+
+4. carousel_slider 
 - https://pub.dev/packages/carousel_slider
-flutter_sequencer 
+
+5. flutter_sequencer 
 - https://pub.dev/packages/flutter_sequencer
 
 This project help me learn a lot more about flutter. If you find this helpful feel 
