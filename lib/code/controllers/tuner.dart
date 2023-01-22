@@ -18,6 +18,7 @@ class TunerController extends GetxController {
   Rx<double> frequency = 0.0.obs;
   Rx<double> diff = 0.0.obs;
   Rx<double> actualFrequency = 0.0.obs;
+  RxList tuningNotes = [].obs;
 
   final List<DropdownMenuItem<String>> tunings = const [
     DropdownMenuItem(
@@ -84,27 +85,40 @@ class TunerController extends GetxController {
           .replaceFirst('TuningStatus.', '');
 
       if (tuning.value == 'Standard') {
+        tuningNotes.value = ['E2', 'A2', 'D3', 'G3', 'B3', 'E4'];
         standardTuning();
       } else if (tuning.value == 'Bass (4 string)') {
+        tuningNotes.value = ['E1', 'A1', 'D2', 'G2'];
         bass4Tuning();
       } else if (tuning.value == 'Bass (5 string)') {
+        tuningNotes.value = ['B0', 'E1', 'A1', 'D2', 'G2'];
         bass5Tuning();
       } else if (tuning.value == 'Bass (6 string)') {
+        tuningNotes.value = ['B0', 'E1', 'A1', 'D2', 'G2', 'C3'];
         bass6Tuning();
       } else if (tuning.value == 'Drop D') {
+        tuningNotes.value = ['D2', 'A2', 'D3', 'G3', 'B3', 'E4'];
         dropDTuning();
       } else if (tuning.value == 'Drop A') {
+        tuningNotes.value = ['A1', 'A2', 'D3', 'G3', 'B3', 'E4'];
         dropATuning();
       } else if (tuning.value == 'Half step down') {
+        tuningNotes.value = ['D#2', 'G#2', 'C#3', 'F#3', 'A#3', 'D#4'];
         halfStepDownTuning();
       } else if (tuning.value == 'Open C') {
+        tuningNotes.value = ['C2', 'G2', 'C3', 'G3', 'C4', 'E4'];
         openCTuning();
       } else if (tuning.value == 'Open D') {
+        tuningNotes.value = ['D2', 'A2', 'D3', 'F#3', 'A3', 'D4'];
         openDTuning();
       } else if (tuning.value == 'Open F') {
+        tuningNotes.value = ['C2', 'F2', 'C3', 'F3', 'A3', 'F4'];
         openFTuning();
       } else if (tuning.value == 'Open G') {
+        tuningNotes.value = ['D2', 'G2', 'D3', 'G3', 'B3', 'D4'];
         openGTuning();
+      } else {
+        tuningNotes.value = [];
       }
     }
   }
@@ -126,7 +140,7 @@ class TunerController extends GetxController {
   }
 
   void standardTuning() {
-    if (frequency.value > 0.0 && frequency.value < 110.0) {
+    if (frequency.value >= 30.0 && frequency.value < 110.0) {
       note.value = 'E2';
       tune(82.0);
     } else if (frequency.value >= 110.0 && frequency.value < 146.0) {
@@ -153,7 +167,7 @@ class TunerController extends GetxController {
   }
 
   void bass4Tuning() {
-    if (frequency.value > 0.0 && frequency.value < 55.0) {
+    if (frequency.value >= 30.0 && frequency.value < 55.0) {
       note.value = 'E1';
       tune(41.0);
     } else if (frequency.value >= 55.0 && frequency.value < 73.0) {
@@ -174,7 +188,7 @@ class TunerController extends GetxController {
   }
 
   void bass5Tuning() {
-    if (frequency.value > 0.0 && frequency.value < 41.0) {
+    if (frequency.value >= 30.0 && frequency.value < 41.0) {
       note.value = 'B0';
       tune(30.0);
     }
@@ -199,7 +213,7 @@ class TunerController extends GetxController {
   }
 
   void bass6Tuning() {
-    if (frequency.value > 0.0 && frequency.value < 41.0) {
+    if (frequency.value >= 30.0 && frequency.value < 41.0) {
       note.value = 'B0';
       tune(30.0);
     }
@@ -227,7 +241,7 @@ class TunerController extends GetxController {
   }
 
   void dropDTuning() {
-    if (frequency.value > 0.0 && frequency.value < 110.0) {
+    if (frequency.value >= 30.0 && frequency.value < 110.0) {
       note.value = 'D2';
       tune(73.0);
     } else if (frequency.value >= 110.0 && frequency.value < 146.0) {
@@ -254,7 +268,7 @@ class TunerController extends GetxController {
   }
 
   void dropATuning() {
-    if (frequency.value > 0.0 && frequency.value < 110.0) {
+    if (frequency.value >= 30.0 && frequency.value < 110.0) {
       note.value = 'A1';
       tune(55.0);
     } else if (frequency.value >= 110.0 && frequency.value < 146.0) {
@@ -281,23 +295,23 @@ class TunerController extends GetxController {
   }
 
   void halfStepDownTuning() {
-    if (frequency.value > 0.0 && frequency.value < 103.0) {
-      note.value = 'D#/Eb2';
+    if (frequency.value >= 30.0 && frequency.value < 103.0) {
+      note.value = 'D#2';
       tune(77.0);
     } else if (frequency.value >= 103.0 && frequency.value < 138.0) {
-      note.value = 'G#/Ab2';
+      note.value = 'G#2';
       tune(103.0);
     } else if (frequency.value >= 138.0 && frequency.value < 185.0) {
-      note.value = 'C#/Db3';
+      note.value = 'C#3';
       tune(138.0);
     } else if (frequency.value >= 185.0 && frequency.value < 233.0) {
-      note.value = 'F#/Gb3';
+      note.value = 'F#3';
       tune(185.0);
     } else if (frequency.value >= 233.0 && frequency.value < 311.0) {
-      note.value = 'A#/Bb3';
+      note.value = 'A#3';
       tune(233.0);
     } else if (frequency.value >= 311.0) {
-      note.value = 'D#/Eb4';
+      note.value = 'D#4';
       tune(311.0);
     } else {
       note.value = '';
@@ -308,7 +322,7 @@ class TunerController extends GetxController {
   }
 
   void openCTuning() {
-    if (frequency.value > 0.0 && frequency.value < 97.0) {
+    if (frequency.value >= 30.0 && frequency.value < 97.0) {
       note.value = 'C2';
       tune(65.0);
     } else if (frequency.value >= 97.0 && frequency.value < 130.0) {
@@ -335,7 +349,7 @@ class TunerController extends GetxController {
   }
 
   void openDTuning() {
-    if (frequency.value > 0.0 && frequency.value < 110.0) {
+    if (frequency.value >= 30.0 && frequency.value < 110.0) {
       note.value = 'D2';
       tune(73.0);
     } else if (frequency.value >= 110.0 && frequency.value < 146.0) {
@@ -345,7 +359,7 @@ class TunerController extends GetxController {
       note.value = 'D3';
       tune(146.0);
     } else if (frequency.value >= 185.0 && frequency.value < 220.0) {
-      note.value = 'F#/Gb3';
+      note.value = 'F#3';
       tune(185.0);
     } else if (frequency.value >= 220.0 && frequency.value < 293.0) {
       note.value = 'A3';
@@ -362,7 +376,7 @@ class TunerController extends GetxController {
   }
 
   void openFTuning() {
-    if (frequency.value > 0.0 && frequency.value < 87.0) {
+    if (frequency.value >= 30.0 && frequency.value < 87.0) {
       note.value = 'C2';
       tune(65.0);
     } else if (frequency.value >= 87.0 && frequency.value < 130.0) {
@@ -389,7 +403,7 @@ class TunerController extends GetxController {
   }
 
   void openGTuning() {
-    if (frequency.value > 0.0 && frequency.value < 97.0) {
+    if (frequency.value >= 30.0 && frequency.value < 97.0) {
       note.value = 'D2';
       tune(73.0);
     } else if (frequency.value >= 97.0 && frequency.value < 146.0) {
