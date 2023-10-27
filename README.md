@@ -1,6 +1,9 @@
 # gtuner
 🎸🎸
 
+<img src="https://www.dropbox.com/scl/fi/4e8z2s7pau4fuwrkdsube/gtuner.jpg?rlkey=oukxjfpb1ysxyw08hhiusvijp&raw=1" alt="Example Image" width="500" height="900">
+
+
 # description 🖊️
 A simple guitar tuning application built using flutter with support for 
 - Android
