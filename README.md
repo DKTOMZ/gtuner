@@ -10,8 +10,8 @@ A simple guitar tuning application built using flutter with support for
 - iOS
 
 The application can be accessed through:
-Android - https://dennis-tomno.onrender.com/gtuner-release.apk
-iOS - Coming Soon!
+- Android - https://dennis-tomno.onrender.com/gtuner-release.apk
+- iOS - Coming Soon!
 
 # UI 🎨
 The app's UI is currently simple with flutter's dark mode theme being used
