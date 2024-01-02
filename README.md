@@ -4,10 +4,14 @@
 <img src="https://www.dropbox.com/scl/fi/4e8z2s7pau4fuwrkdsube/gtuner.jpg?rlkey=oukxjfpb1ysxyw08hhiusvijp&raw=1" alt="Example Image" width="500" height="900">
 
 
-# description 🖊️
+# Description 🖊️
 A simple guitar tuning application built using flutter with support for 
 - Android
 - iOS
+
+The application can be accessed through:
+Android - https://dennis-tomno.onrender.com/gtuner-release.apk
+iOS - Coming Soon!
 
 # UI 🎨
 The app's UI is currently simple with flutter's dark mode theme being used
@@ -17,7 +21,7 @@ based on tuning. Other UI aspects can also be improved but for now it is good en
 
 Not the best designer but i try 😂. Maybe I can collab with a designer to improve it 
 
-# functionality ✨
+# Functionality ✨
 - Tuner : 12 different tunings
 - Metronome : tempo between 30 and 240 BPM
 - Chord Library : Chords shapes of 9 different chord types
@@ -56,8 +60,3 @@ This app makes use of some important packages that power the tuning, chord libra
 
 This project help me learn a lot more about flutter. If you find this helpful feel 
 free to contact me (deni.tomno@gmail.com) to collaborate on this or other projects
-
-
-
-
-
